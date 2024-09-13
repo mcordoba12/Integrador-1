@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="{% static 'FlexicalApp/css/styles.css' %}" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #0E2159;
+            margin-bottom: 10px; /* Reduced space between navbar and content */
+        }
+
+        .navbar-brand img {
+            width: 100px;
+        }
+
+        .nav-link {
+            color: #fff !important;
+        }
+
+        .page-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px; /* Adjust max-width as needed */
+        }
+
+        .card {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin: 10px;
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 500px; /* Adjust max-width as needed */
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align card content */
+            padding: 20px;
+        }
+
+        .card img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .card-body h5 {
+            font-weight: bold;
+            font-size: 24px;
+            color: #0E2159;
+            margin-bottom: 10px;
+        }
+
+        .card-body p {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .btn-custom-size {
+            font-size: 1rem !important;
+            padding: 0.5rem 2rem !important;
+            border-radius: 0.5rem !important;
+        }
+
+        footer {
+            background-color: #0E2159;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'FlexicalApp/assets/img/logo.png' %}" alt="Logo">
+        </a>
+        <div class="ml-auto">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cambiar idioma
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="#">ES</a>
+                        <a class="dropdown-item" href="#">EN</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="card-container">
+                <!-- Opción Cliente -->
+                <div class="card p-4">
+                    <div class="card-body">
+                        <img src="{% static 'FlexicalApp/assets/img/team/3.jpg' %}" alt="Cliente">
+                        <h5 class="card-title">Cliente</h5>
+                        <p class="card-text">Crea un perfil como Cliente y conéctate a los mejores desarrolladores.</p>
+                        <a href="{% url 'register_client' %}" class="btn btn-primary btn-custom-size">Registrarse como Cliente</a>
+
+                    </div>
+                </div>
+                <!-- Opción Freelancer -->
+                <div class="card p-4">
+                    <div class="card-body">
+                        <img src="{% static 'FlexicalApp/assets/img/team/1.jpg' %}" alt="Freelancer">
+                        <h5 class="card-title">Freelancer</h5>
+                        <p class="card-text">Crea un perfil como freelancer y expande tus conocimientos.</p>
+                        <a href= "" class="btn btn-primary btn-custom-size">Registrarse como Freelancer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2024 Flexical. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

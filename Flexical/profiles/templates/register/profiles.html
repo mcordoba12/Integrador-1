@@ -1,0 +1,261 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Estilos personalizados dentro del HTML -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        
+        .navbar {
+            background-color: #0E2159;
+        }
+        
+        .navbar-brand img {
+            width: 100px;
+        }
+        
+        .nav-link {
+            color: #fff !important;
+        }
+        
+        .main-container {
+            display: flex;
+            height: 100vh; /* Ajusta la altura del contenedor para ocupar toda la ventana */
+        }
+        
+        .image-container {
+            position: relative; /* Permite que el contenido dentro del contenedor se posicione sobre la imagen */
+            width: 50%;
+            height: 100%;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra el área del contenedor sin deformarse */
+        }
+        
+        .text-overlay {
+            position: absolute; /* Permite posicionar el texto sobre la imagen */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centra el texto horizontal y verticalmente */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad del texto */
+            border-radius: 8px;
+        }
+        
+        .form-container {
+            width: 50%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            font-size: 36px; /* Tamaño grande del texto */
+            text-align: center; /* Centrado del texto */
+            margin-bottom: 20px; /* Espacio inferior */
+            color: #0E2159; /* Color azul */
+        }
+        
+
+        
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="{% static 'FlexicalApp/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Barra de navegación -->
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'FlexicalApp/assets/img/logo.png' %}">
+            </a>
+            <div class="ml-auto">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cambiar idioma
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <a class="dropdown-item" href="#">ES</a>
+                            <a class="dropdown-item" href="#">EN</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+        <!-- Contenedor principal con la imagen y el formulario -->
+        <div class="container main-container">
+            <!-- Imagen a la izquierda con texto sobre ella -->
+            <div class="image-container">
+                <img src="{% static 'FlexicalApp/assets/img/team/x.jpg' %}" alt="Imagen descriptiva">
+                <div class="text-overlay">
+                    <h1>Bienvenido a Flexical</h1>
+                    <p>Conéctate con las mejores oportunidades freelance</p>
+                </div>
+            </div>
+    
+
+            <!-- Formulario de registro a la derecha -->
+        <div class="form-container">
+            <h2 >Registro</h2> <!-- Título agregado aquí -->
+            <form method="POST" class="form-group">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn btn-success btn-block">Crear cuenta</button>
+            </form>
+        </div>
+    </div>
+    
+        <!-- Scripts de Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>{% load static%}
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+        <!-- Estilos personalizados dentro del HTML -->
+        <style>
+            body {
+                background-color: #f8f9fa;
+            }
+            
+            .navbar {
+                background-color: #0E2159;
+            }
+            
+            .navbar-brand img {
+                width: 100px;
+            }
+            
+            .nav-link {
+                color: #fff !important;
+            }
+            
+            .main-container {
+                display: flex;
+                height: 100vh; /* Ajusta la altura del contenedor para ocupar toda la ventana */
+            }
+            
+            .image-container {
+                position: relative; /* Permite que el contenido dentro del contenedor se posicione sobre la imagen */
+                width: 50%;
+                height: 100%;
+            }
+            
+            .image-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Asegura que la imagen cubra el área del contenedor sin deformarse */
+            }
+            
+            .text-overlay {
+                position: absolute; /* Permite posicionar el texto sobre la imagen */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); /* Centra el texto horizontal y verticalmente */
+                color: #fff;
+                text-align: center;
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad del texto */
+                border-radius: 8px;
+            }
+            
+            .form-container {
+                width: 50%;
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
+    
+            .form-container h2 {
+                font-size: 36px; /* Tamaño grande del texto */
+                text-align: center; /* Centrado del texto */
+                margin-bottom: 20px; /* Espacio inferior */
+                color: #0E2159; /* Color azul */
+            }
+            
+    
+            
+        </style>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Registro</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <link href="{% static 'FlexicalApp/css/styles.css' %}" rel="stylesheet" />
+        </head>
+        <body>
+            <!-- Barra de navegación -->
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'FlexicalApp/assets/img/logo.png' %}">
+                </a>
+                <div class="ml-auto">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cambiar idioma
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                                <a class="dropdown-item" href="#">ES</a>
+                                <a class="dropdown-item" href="#">EN</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        
+            <!-- Contenedor principal con la imagen y el formulario -->
+            <div class="container main-container">
+                <!-- Imagen a la izquierda con texto sobre ella -->
+                <div class="image-container">
+                    <img src="{% static 'FlexicalApp/assets/img/team/x.jpg' %}" alt="Imagen descriptiva">
+                    <div class="text-overlay">
+                        <h1>Bienvenido a Flexical</h1>
+                        <p>Conéctate con las mejores oportunidades freelance</p>
+                    </div>
+                </div>
+        
+    
+                <!-- Formulario de registro a la derecha -->
+            <div class="form-container">
+                <h2 >Registro</h2> <!-- Título agregado aquí -->
+                <form method="POST" class="form-group">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button type="submit" class="btn btn-success btn-block">Crear cuenta</button>
+                </form>
+            </div>
+        </div>
+        
+            <!-- Scripts de Bootstrap -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </body>
+        </html>
